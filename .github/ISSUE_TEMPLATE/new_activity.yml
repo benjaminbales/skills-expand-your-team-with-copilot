@@ -1,0 +1,115 @@
+name: Add New Activity
+description: Request to add a new extracurricular activity to the system
+title: "[New Activity]: "
+labels: ["enhancement", "new-activity"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to request a new extracurricular activity be added to the system.
+  
+  - type: input
+    id: activity-name
+    attributes:
+      label: Activity Name
+      description: What is the name of the activity?
+      placeholder: "Example: Cooking Club"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: activity-description
+    attributes:
+      label: Activity Description
+      description: Provide a brief description of the activity
+      placeholder: "Example: Learn cooking techniques and prepare delicious meals together"
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: activity-category
+    attributes:
+      label: Activity Category
+      description: Which category does this activity belong to?
+      options:
+        - Sports
+        - Arts
+        - Academic
+        - Community
+        - Technology
+        - Other
+    validations:
+      required: true
+  
+  - type: checkboxes
+    id: schedule-days
+    attributes:
+      label: Schedule Days
+      description: Which days will this activity meet? (Select all that apply)
+      options:
+        - label: Monday
+        - label: Tuesday
+        - label: Wednesday
+        - label: Thursday
+        - label: Friday
+        - label: Saturday
+        - label: Sunday
+    validations:
+      required: true
+  
+  - type: input
+    id: start-time
+    attributes:
+      label: Start Time
+      description: When does the activity start?
+      placeholder: "Example: 3:30 PM or 15:30 (24-hour format preferred)"
+    validations:
+      required: true
+  
+  - type: input
+    id: end-time
+    attributes:
+      label: End Time
+      description: When does the activity end?
+      placeholder: "Example: 5:00 PM or 17:00 (24-hour format preferred)"
+    validations:
+      required: true
+  
+  - type: input
+    id: max-participants
+    attributes:
+      label: Maximum Participants
+      description: What is the maximum number of students who can participate?
+      placeholder: "Example: 20"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: additional-details
+    attributes:
+      label: Additional Details
+      description: Any other information about this activity?
+      placeholder: "Special requirements, equipment needed, teacher sponsor, etc."
+    validations:
+      required: false
+  
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Acceptance Criteria** (for Copilot coding agent):
+        - [ ] New activity is added to the database with all provided details
+        - [ ] Activity appears in the activities list on the frontend
+        - [ ] Activity can be filtered by the selected category
+        - [ ] Activity can be filtered by the selected day(s)
+        - [ ] Activity can be filtered by time (if before/after school or weekend)
+        - [ ] Students can register for the activity
+        - [ ] Maximum participant limit is enforced
+        
+        **Implementation Hints**:
+        - Add the activity to `initial_activities` dictionary in `src/backend/database.py`
+        - Ensure schedule format matches: "Day(s), Start Time - End Time"
+        - Convert times to 24-hour format (HH:MM) for `schedule_details`
+        - Set `participants` to empty list `[]` initially
+        - Category must match one of the existing category filter values

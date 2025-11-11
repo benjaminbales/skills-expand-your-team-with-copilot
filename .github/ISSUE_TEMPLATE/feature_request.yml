@@ -1,0 +1,110 @@
+name: Feature Request
+description: Suggest a new feature or functionality for the application
+title: "[Feature]: "
+labels: ["enhancement", "feature-request"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to suggest a new feature or functionality.
+  
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: Clearly describe the feature you'd like to see
+      placeholder: "Example: Add the ability to export a list of all students registered for each activity to a CSV file."
+    validations:
+      required: true
+  
+  - type: textarea
+    id: problem-solved
+    attributes:
+      label: Problem This Solves
+      description: What problem does this feature solve?
+      placeholder: "Example: Currently, teachers have to manually copy student lists, which is time-consuming and error-prone."
+    validations:
+      required: true
+  
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: How do you envision this feature working?
+      placeholder: |
+        Example:
+        - Add an "Export" button on the activities page
+        - When clicked, generate a CSV file with columns: Activity Name, Student Email, Registration Date
+        - Download the file automatically
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature Type
+      description: What type of feature is this?
+      options:
+        - Data Export/Import
+        - New Filter or Search Capability
+        - Student/Activity Management
+        - Reporting/Analytics
+        - Email/Notifications
+        - Security/Authentication
+        - API Enhancement
+        - Other
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: user-impact
+    attributes:
+      label: Who will benefit from this feature?
+      description: Select all that apply
+      multiple: true
+      options:
+        - Teachers
+        - Students
+        - Administrators
+        - Parents
+    validations:
+      required: true
+  
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: Have you considered any alternative approaches?
+      placeholder: "Example: We could use a third-party tool, but integrating it directly would be more convenient."
+    validations:
+      required: false
+  
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information, mockups, or examples?
+      placeholder: "Links to similar features in other apps, screenshots, etc."
+    validations:
+      required: false
+  
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Acceptance Criteria** (for Copilot coding agent):
+        - [ ] Feature is implemented as described
+        - [ ] Feature solves the problem stated above
+        - [ ] Feature is accessible and easy to use
+        - [ ] Feature works correctly in all scenarios
+        - [ ] Appropriate error handling is in place
+        - [ ] Documentation is updated if needed
+        
+        **Implementation Hints**:
+        - Backend API endpoints are in `src/backend/routers/`
+        - Frontend UI is in `src/static/`
+        - Database models are in `src/backend/database.py`
+        - Consider edge cases and error scenarios
+        - Maintain consistency with existing code patterns
+        - Add appropriate validation and error messages
