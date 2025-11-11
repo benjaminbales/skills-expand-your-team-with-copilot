@@ -1,0 +1,114 @@
+name: UI/Visual Change
+description: Request changes to the user interface, styling, or visual design
+title: "[UI]: "
+labels: ["enhancement", "ui"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Request changes to how the application looks or feels. Please be specific about colors, layouts, and visual elements.
+
+  - type: textarea
+    id: current-ui
+    attributes:
+      label: Current UI/Visual State
+      description: Describe what the current interface looks like
+      placeholder: |
+        Example: The website currently uses a blue color scheme...
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-ui
+    attributes:
+      label: Desired UI/Visual Changes
+      description: Describe exactly what you want changed
+      placeholder: |
+        Example: Change the color scheme to use white and lime green (our school colors). Add school mascot images from octodex.github.com...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: change-type
+    attributes:
+      label: Type of Visual Change
+      description: What kind of change is this?
+      options:
+        - Color Scheme / Branding
+        - Layout / Structure
+        - Typography / Fonts
+        - Images / Icons
+        - Animation / Effects
+        - Responsive Design
+        - Accessibility
+        - Multiple Areas
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Specific visual elements that must be changed
+      placeholder: |
+        - [ ] Primary color changed from blue to lime green
+        - [ ] Background is white
+        - [ ] School mascot image appears in header
+        - [ ] All buttons use the new color scheme
+      value: |
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: color-specifications
+    attributes:
+      label: Color Specifications
+      description: Provide exact color codes if available
+      placeholder: |
+        Example:
+        - Primary: #32CD32 (lime green)
+        - Secondary: #FFFFFF (white)
+        - Accent: #228B22 (forest green)
+
+  - type: textarea
+    id: image-urls
+    attributes:
+      label: Image URLs or Asset Links
+      description: Links to images, icons, or other visual assets to use
+      placeholder: |
+        Example: Use mascot from https://octodex.github.com/images/Professortocat_v2.png
+
+  - type: textarea
+    id: design-examples
+    attributes:
+      label: Design Examples or Mockups
+      description: Screenshots, mockups, or examples from other sites
+      placeholder: |
+        Attach images or provide links to similar designs you like...
+
+  - type: textarea
+    id: affected-pages
+    attributes:
+      label: Affected Pages/Components
+      description: Which pages or components should be changed?
+      placeholder: |
+        Example: All pages, or specific pages like: Activities page, Sign-up forms, Navigation bar...
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Visual Constraints
+      description: Any visual guidelines or constraints to follow
+      placeholder: |
+        Example: Must maintain accessibility contrast ratios. Header height should stay the same. Don't change the logo...
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other visual or design context
+      placeholder: |
+        Example: Our school's branding guide is at... These changes should match our physical materials...

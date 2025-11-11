@@ -1,0 +1,132 @@
+name: Bug Report
+description: Report a problem with the High School Management System
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please provide detailed information to help us understand and fix the issue.
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: |
+        Example: When clicking the "Sign Up" button for Basketball, the page shows an error instead of registering the student...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: bug-area
+    attributes:
+      label: Affected Area
+      description: Which part of the system is affected?
+      options:
+        - User Interface / Display Issues
+        - Activity Registration
+        - Student Data
+        - API / Backend
+        - Database
+        - Authentication / Login
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this bug?
+      options:
+        - Critical - System is unusable
+        - High - Major functionality broken
+        - Medium - Feature partially works
+        - Low - Minor issue or cosmetic
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed steps to reproduce the bug
+      placeholder: |
+        1. Go to the activities page
+        2. Click on 'Basketball' activity
+        3. Click 'Sign Up' button
+        4. See error message
+      value: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: |
+        Example: The student should be registered for the activity and see a confirmation message...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+      placeholder: |
+        Example: An error message "Failed to register" appears and no registration is recorded...
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-messages
+    attributes:
+      label: Error Messages or Console Output
+      description: Copy any error messages, stack traces, or console output
+      placeholder: |
+        Example: 
+        Console Error: "POST /api/activities/1/signup 500 Internal Server Error"
+        Message: "Database connection failed"
+      render: shell
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain the problem
+      placeholder: Drag and drop images here or paste image URLs
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: Which browser are you using? (if applicable)
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+        - Not Applicable
+
+  - type: textarea
+    id: technical-hints
+    attributes:
+      label: Technical Hints for Fixing
+      description: Any ideas about what might be causing this or how to fix it?
+      placeholder: |
+        Example: This might be related to the recent database schema change in commit abc123...
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+      placeholder: |
+        Example: This started happening after the last deployment. It only affects Chrome users...

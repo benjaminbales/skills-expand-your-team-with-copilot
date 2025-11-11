@@ -1,0 +1,92 @@
+name: Feature Request
+description: Suggest a new feature or enhancement for the High School Management System
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a new feature! Please provide as much detail as possible to help Copilot understand and implement your request.
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Problem Description
+      description: Clearly describe the problem or need this feature addresses
+      placeholder: |
+        Example: Teachers need a way to track which students have conflicting activity schedules...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature-area
+    attributes:
+      label: Feature Area
+      description: Which part of the system does this feature affect?
+      options:
+        - User Interface / Frontend
+        - Activities Management
+        - Student Management
+        - API / Backend
+        - Database / Data Model
+        - Authentication / Security
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Describe what you'd like to see implemented
+      placeholder: |
+        Example: Add a calendar view that shows all activities in a weekly grid format...
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: List specific, measurable criteria that define when this feature is complete
+      placeholder: |
+        - [ ] Calendar view displays activities in a weekly grid
+        - [ ] Users can toggle between card view and calendar view
+        - [ ] Activities are positioned based on their scheduled time
+        - [ ] Overlapping activities are shown side-by-side
+      value: |
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical-hints
+    attributes:
+      label: Technical Hints and Suggestions
+      description: Any specific technical approaches, libraries, or implementation details to consider
+      placeholder: |
+        Example: Consider using a CSS Grid layout for the calendar. The toggle button should be in the top navigation bar...
+
+  - type: textarea
+    id: ui-mockup
+    attributes:
+      label: UI Mockup or Examples
+      description: Link to mockups, screenshots, or examples from other systems
+      placeholder: |
+        Example: Similar to Google Calendar's weekly view...
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Limitations and Constraints
+      description: Any limitations, edge cases, or constraints to be aware of
+      placeholder: |
+        Example: Calendar should only show the current week, not multiple weeks. Mobile responsiveness is not required for MVP...
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information, related issues, or context
+      placeholder: |
+        Example: This relates to issue #42. We previously tried approach X but it didn't work because...

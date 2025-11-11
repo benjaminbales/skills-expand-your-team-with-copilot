@@ -1,0 +1,90 @@
+name: Documentation Update
+description: Improve or update documentation, help text, or user guides
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Request updates to documentation, README files, help text, or user guides.
+
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Documentation Type
+      description: What kind of documentation needs updating?
+      options:
+        - README or Setup Instructions
+        - API Documentation
+        - User Guide / Help Text
+        - Code Comments
+        - Developer Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-issue
+    attributes:
+      label: Current Documentation Issue
+      description: What's wrong with the current documentation?
+      placeholder: |
+        Example: The README doesn't explain how to run the application. The setup instructions are outdated...
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-changes
+    attributes:
+      label: Desired Changes
+      description: What should the documentation say instead?
+      placeholder: |
+        Example: Add a "Getting Started" section that explains how to install dependencies and run the development server...
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Specific documentation changes that should be made
+      placeholder: |
+        - [ ] README includes installation instructions
+        - [ ] Setup steps are tested and work on a fresh install
+        - [ ] API endpoints are documented with example requests
+        - [ ] Screenshots are updated to match current UI
+      value: |
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: file-locations
+    attributes:
+      label: Files to Update
+      description: Which files or sections need to be updated?
+      placeholder: |
+        Example:
+        - README.md - Add installation section
+        - docs/api.md - Update endpoint documentation
+        - src/static/index.html - Update help tooltips
+
+  - type: textarea
+    id: technical-details
+    attributes:
+      label: Technical Details to Include
+      description: Specific technical information that should be documented
+      placeholder: |
+        Example:
+        - Python 3.8+ required
+        - FastAPI framework
+        - SQLite database
+        - Commands: pip install -r requirements.txt, uvicorn app:app
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+      placeholder: |
+        Example: New users are confused about setup. This documentation should help teachers get the system running...
