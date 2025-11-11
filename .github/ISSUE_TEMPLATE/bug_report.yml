@@ -83,3 +83,11 @@ body:
         - [ ] The expected behavior is working correctly
         - [ ] No new bugs are introduced
         - [ ] The fix has been tested with the reproduction steps
+        
+        **Implementation Hints**:
+        - Backend API is in `src/backend/routers/`
+        - Frontend code is in `src/static/` (HTML, CSS, JavaScript)
+        - Database logic is in `src/backend/database.py`
+        - Check browser console for JavaScript errors
+        - Review network requests in browser DevTools
+        - Test the fix thoroughly before marking as complete
