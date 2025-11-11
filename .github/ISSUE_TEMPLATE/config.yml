@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: GitHub Copilot Documentation
+    url: https://docs.github.com/en/copilot
+    about: Learn more about using GitHub Copilot
+  - name: Ask a Question
+    url: https://github.com/benjaminbales/skills-expand-your-team-with-copilot/discussions
+    about: Ask questions and discuss with the community

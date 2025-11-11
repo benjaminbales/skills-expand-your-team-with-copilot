@@ -1,0 +1,108 @@
+name: Activity Data Update
+description: Add, modify, or remove activity data in the system
+title: "[Data]: "
+labels: ["data", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to request changes to activity data, such as adding new activities, updating schedules, or modifying activity details.
+
+  - type: dropdown
+    id: change-type
+    attributes:
+      label: Type of Data Change
+      description: What kind of data change are you requesting?
+      options:
+        - Add New Activity
+        - Modify Existing Activity
+        - Remove Activity
+        - Bulk Update Multiple Activities
+        - Add New Activity Category
+        - Other Data Change
+    validations:
+      required: true
+
+  - type: textarea
+    id: activity-details
+    attributes:
+      label: Activity Details
+      description: Provide complete details about the activity/activities
+      placeholder: |
+        For new activities, include:
+        - Activity Name
+        - Category (Sports, Arts, Academic, etc.)
+        - Description
+        - Day(s) of week
+        - Time
+        - Location
+        - Instructor/Teacher
+        - Max enrollment
+        - Any special requirements
+        
+        Example:
+        - Name: Robotics Club
+        - Category: Academic
+        - Description: Learn to build and program robots
+        - Day: Thursday
+        - Time: 3:30 PM - 5:00 PM
+        - Location: Room 204
+        - Instructor: Mr. Smith
+        - Max Enrollment: 20 students
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Specific criteria to verify the data changes
+      placeholder: |
+        - [ ] New activity appears in the activities list
+        - [ ] Activity shows correct time and location
+        - [ ] Students can sign up for the activity
+        - [ ] Activity appears when filtered by category
+      value: |
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: existing-activity
+    attributes:
+      label: Existing Activity (for modifications)
+      description: If modifying an existing activity, specify which one and what should change
+      placeholder: |
+        Example: 
+        Activity to modify: Basketball
+        Changes needed:
+        - Change time from 3:00 PM to 3:30 PM
+        - Increase max enrollment from 15 to 20
+        - Change location from Gym A to Gym B
+
+  - type: textarea
+    id: data-validation
+    attributes:
+      label: Data Validation Requirements
+      description: Any validation rules or constraints for this data
+      placeholder: |
+        Example:
+        - Time must not conflict with other activities in the same location
+        - Max enrollment must be between 5 and 50
+        - Instructor must be a registered teacher
+
+  - type: textarea
+    id: technical-hints
+    attributes:
+      label: Technical Hints
+      description: Database location or specific files to modify
+      placeholder: |
+        Example: Activities are stored in src/backend/database.py in the init_database() function...
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+      placeholder: |
+        Example: This activity starts next semester. We need to add 5 more activities like this one...
