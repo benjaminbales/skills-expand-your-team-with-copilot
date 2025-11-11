@@ -1,0 +1,94 @@
+name: UI Improvement
+description: Request improvements to the user interface or user experience
+title: "[UI]: "
+labels: ["enhancement", "ui"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to request improvements to the user interface or user experience.
+  
+  - type: textarea
+    id: current-situation
+    attributes:
+      label: Current Situation
+      description: Describe the current UI/UX and what could be improved
+      placeholder: "Example: The activity cards are difficult to read because the text is too small."
+    validations:
+      required: true
+  
+  - type: textarea
+    id: proposed-improvement
+    attributes:
+      label: Proposed Improvement
+      description: Describe what you'd like to see changed or added
+      placeholder: "Example: Increase the font size of activity names and add better spacing between cards."
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: ui-area
+    attributes:
+      label: Which area of the UI needs improvement?
+      description: Select the main area that needs changes
+      options:
+        - Activity Cards/Display
+        - Navigation/Header
+        - Filters (Sidebar)
+        - Search Box
+        - Login/Registration Forms
+        - Overall Layout
+        - Color Scheme/Styling
+        - Mobile Responsiveness
+        - Other
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority Level
+      description: How important is this improvement?
+      options:
+        - Low - Nice to have
+        - Medium - Would improve usability
+        - High - Significantly impacts usability
+    validations:
+      required: true
+  
+  - type: textarea
+    id: user-benefit
+    attributes:
+      label: User Benefit
+      description: How will this improvement help teachers and students?
+      placeholder: "Example: Teachers will be able to find activities more quickly, reducing time spent helping students register."
+    validations:
+      required: true
+  
+  - type: textarea
+    id: design-suggestions
+    attributes:
+      label: Design Suggestions
+      description: Any specific design ideas, mockups, or examples?
+      placeholder: "Include links to examples, attach screenshots, or describe specific design elements"
+    validations:
+      required: false
+  
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Acceptance Criteria** (for Copilot coding agent):
+        - [ ] The proposed UI improvement is implemented
+        - [ ] Changes are visually consistent with the existing design
+        - [ ] Changes work on both desktop and mobile devices
+        - [ ] No existing functionality is broken
+        - [ ] User benefit described above is achieved
+        
+        **Implementation Hints**:
+        - UI styles are in `src/static/styles.css`
+        - HTML structure is in `src/static/index.html`
+        - JavaScript functionality is in `src/static/app.js`
+        - Test changes in browser at different screen sizes
+        - Maintain accessibility standards (proper contrast, labels, etc.)

@@ -1,0 +1,93 @@
+name: Bug Report
+description: Report a bug or issue with the application
+title: "[Bug]: "
+labels: ["bug"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this bug! Please provide as much detail as possible to help us fix the issue.
+  
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Problem Description
+      description: Clearly describe what is not working correctly
+      placeholder: "Example: When I click the 'Register' button for Chess Club, nothing happens and no error message is shown."
+    validations:
+      required: true
+  
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: List the exact steps to reproduce the bug
+      placeholder: |
+        1. Go to the activities page
+        2. Click on 'Chess Club'
+        3. Enter student email
+        4. Click 'Register'
+        5. See error
+    validations:
+      required: true
+  
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: "The student should be registered for the activity and a success message should appear."
+    validations:
+      required: true
+  
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+      placeholder: "Nothing happens when clicking the Register button."
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: affected-area
+    attributes:
+      label: Affected Area
+      description: Which part of the application is affected?
+      options:
+        - Student Registration
+        - Activity Display/List
+        - Filters (Day/Time/Category)
+        - Teacher Login
+        - Search Functionality
+        - Other
+    validations:
+      required: true
+  
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, or error messages
+      placeholder: "Browser console errors, screenshots, etc."
+    validations:
+      required: false
+  
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Acceptance Criteria** (auto-generated for Copilot):
+        - [ ] The bug described above is fixed
+        - [ ] The expected behavior is working correctly
+        - [ ] No new bugs are introduced
+        - [ ] The fix has been tested with the reproduction steps
+        
+        **Implementation Hints**:
+        - Backend API is in `src/backend/routers/`
+        - Frontend code is in `src/static/` (HTML, CSS, JavaScript)
+        - Database logic is in `src/backend/database.py`
+        - Check browser console for JavaScript errors
+        - Review network requests in browser DevTools
+        - Test the fix thoroughly before marking as complete

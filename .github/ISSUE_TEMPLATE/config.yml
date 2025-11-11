@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or Discussion
+    url: https://github.com/benjaminbales/skills-expand-your-team-with-copilot/discussions
+    about: Have a question? Start a discussion instead of opening an issue.
+  - name: Documentation
+    url: https://github.com/benjaminbales/skills-expand-your-team-with-copilot/blob/main/docs/how-to-develop.md
+    about: Read the development guide for setup and usage instructions.

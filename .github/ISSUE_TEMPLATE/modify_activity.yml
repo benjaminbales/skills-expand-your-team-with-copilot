@@ -1,0 +1,112 @@
+name: Modify Existing Activity
+description: Request changes to an existing activity's details or schedule
+title: "[Activity Update]: "
+labels: ["enhancement", "activity-modification"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to request changes to an existing activity.
+  
+  - type: dropdown
+    id: activity-name
+    attributes:
+      label: Which activity needs to be modified?
+      description: Select the activity to update
+      options:
+        - Chess Club
+        - Programming Class
+        - Morning Fitness
+        - Soccer Team
+        - Basketball Team
+        - Art Club
+        - Drama Club
+        - Math Club
+        - Debate Team
+        - Weekend Robotics Workshop
+        - Science Olympiad
+        - Sunday Chess Tournament
+        - Manga Maniacs
+        - Other (specify in details)
+    validations:
+      required: true
+  
+  - type: checkboxes
+    id: changes-needed
+    attributes:
+      label: What needs to be changed?
+      description: Select all that apply
+      options:
+        - label: Activity Name
+        - label: Description
+        - label: Schedule (days/times)
+        - label: Maximum Participants
+        - label: Category
+        - label: Remove Activity
+        - label: Other (specify below)
+    validations:
+      required: true
+  
+  - type: textarea
+    id: change-details
+    attributes:
+      label: Change Details
+      description: Provide the specific changes needed
+      placeholder: |
+        Example:
+        - Change schedule from "Mondays and Fridays" to "Tuesdays and Thursdays"
+        - Update start time from 3:15 PM to 3:30 PM
+        - Increase max participants from 12 to 15
+    validations:
+      required: true
+  
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for Change
+      description: Why is this change needed?
+      placeholder: "Example: Room availability has changed, or we have more interest than expected."
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      description: How soon is this change needed?
+      options:
+        - Low - Can wait a few weeks
+        - Medium - Needed within a week
+        - High - Needed ASAP
+    validations:
+      required: true
+  
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact on Students
+      description: Will this affect current participants? How should they be notified?
+      placeholder: "Example: 5 students are currently enrolled and will need to be notified of the schedule change."
+    validations:
+      required: false
+  
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Acceptance Criteria** (for Copilot coding agent):
+        - [ ] Activity details are updated as specified in "Change Details"
+        - [ ] Changes are reflected on the frontend
+        - [ ] If schedule changed, filtering still works correctly
+        - [ ] If max participants changed, validation is updated
+        - [ ] If removing activity, it no longer appears in the list
+        - [ ] Data integrity is maintained
+        
+        **Implementation Hints**:
+        - Update the activity in `initial_activities` dictionary in `src/backend/database.py`
+        - Maintain the same data structure (schedule, schedule_details, etc.)
+        - For schedule changes, update both `schedule` (display) and `schedule_details` (filtering)
+        - Times in `schedule_details` must be in 24-hour HH:MM format
+        - If removing activity, delete it from `initial_activities`
+        - Consider existing participants list when making changes
